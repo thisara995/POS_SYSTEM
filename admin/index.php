@@ -95,5 +95,28 @@
                 </div>
             </div>
 
+            <div class="row">
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-line-chart"></i>
+                    Line Chart of Monthly Sales
+                </div>
+                <div class="card-body">
+                    <!-- Canvas for line Chart -->
+                    <canvas id="lineChart" width="100%" height="50"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-bar me-1"></i>
+                Bar Chart of Allocation for Different Products
+            </div>
+            <div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+        </div>
+
                 </main>
 <?php  include 'includes/fotter.php';?>
