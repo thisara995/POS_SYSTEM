@@ -10,6 +10,12 @@
                             </a>
 
                             <div class="sb-sidenav-collapse-arrow"></div>
+                            <a class="nav-link" href="Inventory.php">
+                                <div class="sb-nav-link-icon" style="margin-right: 15px;"> <i class="fas fa-archive"></i></div>
+                                 inventory
+                            </a>
+
+                            <div class="sb-sidenav-collapse-arrow"></div>
                             <a class="nav-link" href="Add-sale.php">
                                 <div class="sb-nav-link-icon" style="margin-right: 15px;"> <i class="fas fa-chart-line"></i></div>
                                 Sales

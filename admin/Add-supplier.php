@@ -11,22 +11,23 @@
 
 <body>
 
-    <div class="container mt-4">
+    <div class="container mt-3">
     <div class="row">
     <div class="col-supplier" style="margin-bottom: 20px;">
     <h1><i class="fa-solid fa-people-group"></i>  Suppliers</h1>
 </div>
-
-<div class="form-group" style="max-width:500px;">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search Supplier .....">
-    </div>
 
     <div class="col text-right" style="margin-right:230px;">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSupplierModal">
     <i class="fas fa-plus-circle"></i>  Add Supplier </button>
     </div>
 </div>
-        <table class="table mt-4">
+
+<div class="container mt-3">
+<div class="row justify-content-center">
+<div class="card">
+<div class="card-body">
+    <table id="datatablesSimple" class="table">
             <thead>
                 <tr>
                     <th>Supplier ID</th>
@@ -59,9 +60,15 @@
                     </td>
                 </tr>
                 <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div>
+                </div>
+            </div>
+         </div>
     </div>
+</div>
 
     <!-- Add Supplier Modal -->
     <div class="modal fade" id="addSupplierModal" tabindex="-1" role="dialog" aria-labelledby="addSupplierModalLabel"
@@ -74,6 +81,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <!-- Add your form fields for adding a new supplier here -->
                     <form>

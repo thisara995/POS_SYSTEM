@@ -17,16 +17,18 @@
     <h1><i class="fa-solid fa-users-gear"></i> Users</h1>
 </div>
 
-<div class="form-group" style="max-width:500px;">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search User .....">
-    </div>
 
     <div class="col text-right" style="margin-right:230px;">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adduserModal">
     <i class="fas fa-plus-circle"></i> Add User </button>
     </div>
+
 </div>
-        <table class="table mt-4">
+<div class="container mt-3">
+<div class="row justify-content-center">
+<div class="card">
+<div class="card-body">
+    <table id="datatablesSimple" class="table">
             <thead>
                 <tr>
                     <th>Username</th>
@@ -53,9 +55,13 @@
                     </td>
                 </tr>
                 <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+                      </tbody>
+                 </table>
+              </div>
+            </div>
+         </div>
     </div>
+</div>
 
     <!-- Add Supplier Modal -->
     <div class="modal fade" id="adduserModal" tabindex="-1" role="dialog" aria-labelledby="adduserModal"

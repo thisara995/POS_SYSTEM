@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="background-color:#d1cdcd;">
 
     <div class="container mt-4">
     <div class="row">
@@ -17,43 +17,44 @@
     <h1><i class="fas fa-list-alt icon"></i> Categories</h1>
 </div>
 
- <div class="form-group" style="max-width:500px;">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search Category...">
-    </div>
-
-
     <div class="col text-right">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSupplierModal"  style="margin-right:230px;">
         <i class="fas fa-plus-circle"></i> Add Category
         </button>
     </div>
-</div>
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th>Category_ID</th>
-                    <th>Category</th>
-                    <th>Action</th>
-                 
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add your supplier data rows here -->
-                <tr>
-                   
-                    <td>Supplier 1</td>
-                    <td>Supplier 1</td>
-                    <td>
-                        <a href="delete_supplier_page.html">
-                        <i class="fas fa-trash btn btn-danger btn-sm"></i>
-                         </a>
-                    </td>
 
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
     </div>
+    <div class="container mt-3">
+    <div class="row justify-content-center">
+    <div class="card">
+    <div class="card-body">
+    <table id="datatablesSimple" class="table">
+        <thead>
+            <tr>
+                <th>Category_ID</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add your category data rows here -->
+            <tr>
+                <td>Category 1</td>
+                <td>Category 1</td>
+                <td>
+                    <a href="delete_category_page.html">
+                        <i class="fas fa-trash btn btn-danger btn-sm"></i>
+                    </a>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
     <!-- Add Product Modal -->
 

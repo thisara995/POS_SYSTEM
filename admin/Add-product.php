@@ -7,74 +7,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Product Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    /* Define custom colors for icons */
+    .view-icon { color: green; }
+    .edit-icon { color: blue; }
+    .delete-icon { color: red; }
+  </style>
 </head>
 
 <body>
 
-    <div class="container mt-4">
+    <div class="container mt-3">
     <div class="row">
     <div class="col-supplier" style="margin-bottom: 20px;">
     <h1>  <i class="fas fa-list-alt icon"></i> Products</h1>
 </div>
 
 
-    <div class="form-group" style="max-width:500px;">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search Product ...">
-    </div>
-
     <div class="col text-right">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSupplierModal" style="margin-right:230px;">
     <i class="fas fa-plus-circle"></i>  Add Product </button>
     </div>
-</div>
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th>Item Code</th>
-                    <th>Item Name</th>
-                    <th>Category</th>
-                    <th>Supplier</th>
-                    <th>Date Arrival</th>
-                    <th>Expire Date</th>
-                    <th>Original Price</th>
-                    <th>Selling Price</th>
-                    <th>Qty</th>
-                    <th>Qty Left</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                 
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add your supplier data rows here -->
-                <tr>
-                    <td>1</td>
-                    <td>Supplier 1</td>
-                    <td>ABC</td>
-                    <td>123 Main St</td>
-                    <td>555-1234</td>
-                    <td>Notes</td>
-                    <td>1</td>
-                    <td>Supplier 1</td>
-                    <td>ABC</td>
-                    <td>123 Main St</td>
-                    <td>12,000</td>
-                    <td>
-                         <a href="edit_supplier_page.html">
-                         <i class="fas fa-edit btn btn-info btn-sm" data-toggle="modal"
-                         data-target="#editSupplierModal"></i>
-                        </a>
-
-                        <a href="delete_supplier_page.html">
-                        <i class="fas fa-trash btn btn-danger btn-sm"></i>
-                         </a>
-                    </td>
-
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    
     </div>
+    <div class="container mt-3">
+    <div class="row justify-content-center">
+    <div class="card">
+    <div class="card-body">
+    <table id="datatablesSimple" class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Supplier</th>
+                                <!-- <th>Barcode</th> -->
+                                <th>Supplied Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Existing row -->
+                            <tr>
+                                <td>1</td>
+                                <td>Supplier 1</td>
+                                <td>ABC</td>
+                                <td>123 Main St</td>
+                                <td>555-1234</td>
+                                <td>Notes</td>
+                                <td>1</td>
+                                <!-- <td>Supplier 1</td> -->
+                                <td>ABC</td>
+                                <td>
+                                <a href="view-page.html">
+                                    <i class="fas fa-eye view-icon"></i> <!-- View Icon -->
+                                </a>
+
+                                <a href="edit-page.html">
+                                    <i class="fas fa-edit edit-icon"></i> <!-- Edit Icon -->
+                                </a>
+
+                                <a href="delete-action.html">
+                                    <i class="fas fa-trash-alt delete-icon"></i> <!-- Delete Icon -->
+                                </a>
+
+                                </td>
+                                </tr>
+                            <!-- Add more rows here if needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Add Product Modal -->
 
@@ -93,12 +102,12 @@
              <form>
 
         <div class="form-group">
-            <label for="itemCode">Item Code</label>
+            <label for="itemCode">Product Code</label>
             <input type="text" class="form-control" id="itemCode" placeholder="Item Code">
         </div>
 
         <div class="form-group">
-            <label for="itemName">Item Name</label>
+            <label for="itemName">Product Name</label>
             <input type="text" class="form-control" id="itemName" placeholder="Item Name">
         </div>
 
@@ -111,35 +120,34 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="dateArrival">Date Arrival</label>
-            <input type="date" class="form-control" id="dateArrival">
-        </div>
 
         <div class="form-group">
-            <label for="expireDate">Expire Date</label>
-            <input type="date" class="form-control" id="expireDate">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" cols="30" rows="2"></textarea>
         </div>
 
+
         <div class="form-group">
-            <label for="sellingPrice">Selling Price</label>
+            <label for="sellingPrice">Price</label>
             <input type="text" class="form-control" id="sellingPrice" placeholder="Selling Price">
-        </div>
-
-        <div class="form-group">
-            <label for="originalPrice">Original Price</label>
-            <input type="text" class="form-control" id="originalPrice" placeholder="Original Price">
-        </div>
-
-        <div class="form-group">
-            <label for="supplier">Supplier</label>
-            <input type="text" class="form-control" id="supplier" placeholder="Supplier">
         </div>
 
         <div class="form-group">
             <label for="quantity">Quantity</label>
             <input type="text" class="form-control" id="quantity" placeholder="Quantity">
         </div>
+
+        <div class="form-group">
+            <label for="supplier">Supplier</label>
+            <input type="text" class="form-control" id="supplier" placeholder="Supplier">
+        </div>
+       
+        <div class="form-group">
+            <label for="supplier">Supplied Date</label>
+            <input type="date" class="form-control" id="supplier" placeholder="Supplier">
+        </div>
+
+        
 
     </form>
 </div>

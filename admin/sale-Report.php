@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="container mt-4">
+    <div class="container mt-2">
     <div class="row">
     <div class="col-supplier" style="margin-bottom: 20px;">
     <h1> <i class="fas fa-chart-bar"></i>  Sales Report</h1>
@@ -20,53 +20,66 @@
     </a>
 </div>
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-<div style="display: flex; margin-left:200px;">
-    <div>
-        <strong>From :</strong>
-        <input type="date" style="width: 223px; height: 35px; color: #222;" name="d1" class="tcal" value="" />
-    </div>
-    <div style="margin-left: 20px;">
-        <strong>To :</strong>
-        <input type="date" style="width: 223px; height: 35px; color: #222;" name="d2" class="tcal" value="" />
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: -30px;">
+    <div style="display: flex; margin-left:200px;">
+        <div>
+            <strong>From :</strong>
+            <input type="date" style="width: 223px; height: 35px; color: #222;" name="d1" class="tcal" value="" />
+        </div>
+        <div style="margin-left: 20px;">
+            <strong>To :</strong>
+            <input type="date" style="width: 223px; height: 35px; color: #222;" name="d2" class="tcal" value="" />
+        </div>
     </div>
 </div>
-<div class="col text-right" style="margin-right:230px;">
+
+<div class="col text-right" style="margin-right:230px; margin-top: -35px;">
     <a href="your_destination_page.html" class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i> Search
     </a>
 </div>
 
 </div>
-<div style="font-weight:bold; text-align:center; font-size:14px; margin-bottom: 20px; margin-top:20px;">
+<div style="font-weight:bold; text-align:center; font-size:14px; margin-top: 10px; ">
     Sales Report from&nbsp;ssssssssssssssssssssto sfffffsfssssssssss&nbsp;
 </div>
-</div>
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th>Transaction ID </th>
-                    <th> Transaction Date</th>
-                    <th>Customer Name</th>
-                    <th>Invoice Number</th>
-                    <th>Amount</th>
-                    <th>Profit</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <!-- Add your supplier data rows here -->
-                <tr>
-                    <td>1</td>
-                    <td>Supplier 1</td>
-                    <td>ABC</td>
-                    <td>123 Main St</td>
-                    <td>555-1234</td>
-                    <td>Notes</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="container mt-3">
+<div class="row justify-content-center">
+<div class="card">
+<div class="card-body">
+    <table id="datatablesSimple" class="table">
+                    <thead>
+                        <tr>
+                            <th>Sale ID</th>
+                            <th>Date</th>
+                            <th>Customer Name</th>
+                            <th> Total Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                            <tbody>
+                                <!-- Add your supplier data rows here -->
+                                <tr>
+                                    <td>2023-11-01</td>
+                                    <td>ohn Doe</td>
+                                    <td>$150.50</td>
+                                    <td>123 Main St</td>
+                                    <td>
+                                        <a href="delete_supplier_page.html">
+                                        <i class="fas fa-eye btn btn-primary btn-sm"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </table>
+                  </div>
+             </div>
+         </div>
     </div>
+</div>
+
+
 
     <!-- Add Supplier Modal -->
     <div class="modal fade" id="addSupplierModal" tabindex="-1" role="dialog" aria-labelledby="addSupplierModalLabel"

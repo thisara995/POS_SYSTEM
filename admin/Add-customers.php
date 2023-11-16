@@ -11,55 +11,72 @@
 
 <body>
 
-    <div class="container mt-4">
+    <div class="container mt-3">
     <div class="row">
     <div class="col-supplier" style="margin-bottom: 20px;">
     <h1><i class="fa-solid fa-users-line"></i> Customers</h1>
 </div>
 
-<div class="form-group" style="max-width:500px;">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search Customer .....">
-    </div>
-
     <div class="col text-right">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSupplierModal"style="margin-right:230px;">
     <i class="fas fa-plus-circle"></i>  Add Customer </button>
     </div>
-</div>
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th>Full Name</th>
-                    <th>Address</th>
-                    <th>email</th>
-                    <th>Contact Number</th>
-                    <th>Note</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add your supplier data rows here -->
-                <tr>
-                    <td>ttt</td>
-                    <td>Address123</td>
-                    <td>email@gmail.com</td>
-                    <td>077-2283632</td>
-                    <td>sample note</td>
-                    <td>
-                         <a href="edit_supplier_page.html">
-                         <i class="fas fa-edit btn btn-info btn-sm" data-toggle="modal"
-                         data-target="#editSupplierModal"></i>
-                        </a>
 
-                        <a href="delete_supplier_page.html">
-                        <i class="fas fa-trash btn btn-danger btn-sm"></i>
-                         </a>
-                    </td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+</div>
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+            <div class="card">
+            <div class="card-body">
+            <table id="datatablesSimple" class="table">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Address</th>
+                            <th>email</th>
+                            <th>Contact Number</th>
+                            <th>Note</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add your supplier data rows here -->
+                        <tr>
+                            <td>ttt</td>
+                            <td>Address123</td>
+                            <td>email@gmail.com</td>
+                            <td>077-2283632</td>
+                            <td>sample note</td>
+                            <td>
+                                <a href="edit_supplier_page.html">
+                                <i class="fas fa-edit btn btn-info btn-sm" data-toggle="modal"
+                                data-target="#editSupplierModal"></i>
+                                </a>
+
+                                <a href="delete_supplier_page.html">
+                                <i class="fas fa-trash btn btn-danger btn-sm"></i>
+                                </a>
+                                </td>
+                            </tr>
+                            <td>ttt</td>
+                            <td>Address123</td>
+                            <td>email@gmail.com</td>
+                            <td>077-2283632</td>
+                            <td>sample note</td>
+                            <td>
+                         </tbody>
+                         <td>ttt</td>
+                            <td>Address123</td>
+                            <td>email@gmail.com</td>
+                            <td>077-2283632</td>
+                            <td>sample note</td>
+                            <td>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
 
     <!-- Add Supplier Modal -->
     <div class="modal fade" id="addSupplierModal" tabindex="-1" role="dialog" aria-labelledby="addSupplierModalLabel"

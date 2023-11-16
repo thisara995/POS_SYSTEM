@@ -1,9 +1,8 @@
 
-
 <?php include 'includes/header.php' ;?>
 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4"><i class="fas fa-home"></i> Dashboard</h1>
+                        <h1 class="mt-3"><i class="fas fa-home"></i> Dashboard</h1>
                         <ol class="breadcrumb mb-4">
                         </ol>
                         <div class="row">
@@ -108,15 +107,42 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col-lg-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-chart-bar me-1"></i>
-                Bar Chart of Allocation for Different Products
-            </div>
-            <div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
-        </div>
 
-                </main>
+        <div class="col-lg-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Bar Chart of Sales distribution by product categories.
+                                    </div>
+                                    <div class="card-body"><canvas id="myChart" width="100%" height="50"></canvas></div>
+                                    <script>                             
+                                    var xValues = ["Product 1", "Product 2", "Product 3", "Product 4", "Prouct 5"];
+                                    var yValues = [55, 49, 44, 24, 15];
+                                    var barColors = 'rgba(96, 130, 182)';
+
+                                    new Chart("myChart", {
+                                    type: "bar",
+                                    data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues,
+                                    label: "Sales distribution by product categories",
+                                    }]
+                                    },
+                                    options: {
+                                    legend: {display: false},
+                                    title: {
+                                    display: true,
+                                  
+                                    }
+                                    }
+                                    });
+                                    </script>
+
+
+                                </div>
+                            </div>
+       
+    </main>
 <?php  include 'includes/fotter.php';?>
