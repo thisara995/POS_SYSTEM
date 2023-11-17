@@ -23,7 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         exit();
     } else {
         // Use prepared statements to prevent SQL injection
-        $sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        $sql = "SELECT * FROM user_temp WHERE username = ? AND password = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ss", $username, $password);
         mysqli_stmt_execute($stmt);
