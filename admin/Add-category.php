@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $error_message = "Error: " . $stmt->error;
             }
             $stmt->close();
+          
         } else {
             $error_message = "Error in preparing the statement.";
         }
@@ -23,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "Please fill in the 'category' field ";
     }
 }
+   
 
 // Fetching categories from the database
 $sql = "SELECT CategoryID, category_name FROM categories"; 
@@ -40,7 +42,7 @@ $result = $conn->query($sql);
     <!-- Include FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body style="background-color: #d1cdcd;">
+<body>
 
 <div class="container mt-3">
     <div class="row">
@@ -49,24 +51,32 @@ $result = $conn->query($sql);
         </div>
        
         <?php
-    if (isset($success_message)) {
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width: 400px; position: fixed; top:65px; right: 10px;">
-                '.$success_message.'
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>';
-    }
-    else 
-    if (isset($error_message)) {
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 400px; position: fixed; top:65px; right: 10px;" >
-                '.$error_message.'
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>';
-    }
+if (isset($success_message)) {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width: 400px; position: fixed; top:65px; right: 10px;">
+    '.$success_message.'
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>';
+} elseif (isset($error_message)) {
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 400px; position: fixed; top:65px; right: 10px;" >
+    '.$error_message.'
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>';
+} elseif (isset($_GET["msg"])) {
+    $msg = $_GET["msg"];
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="max-width: 400px; position: fixed; top:65px; right: 10px;">
+    '.$msg.'
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>';
+}
 ?>
+
+
     <div class="col text-right">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategoryModal" style="margin-right: 230px; margin-top: -30px;">
         <i class="fas fa-plus-circle"></i> Add Category
@@ -87,23 +97,24 @@ $result = $conn->query($sql);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
+                        <?php
                             if ($result->num_rows > 0) {
-                                while($row = $result->fetch_assoc()) {
+                                while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
                                     echo "<td>" . $row["CategoryID"] . "</td>";
                                     echo "<td>" . $row["category_name"] . "</td>";
-                                    echo "<td>
-                                            <a href='delete_category_page.html'>
-                                                <i class='fas fa-trash btn btn-danger btn-sm'></i>
-                                            </a>
-                                          </td>";
+                                    echo "<td>";
+                                    echo "<a href='delete-category.php?category_id=" . $row["CategoryID"] . "' onclick='return confirm(\"Are you sure you want to delete this category?\")'>";
+                                    echo "<i class='fas fa-trash btn btn-danger btn-sm'></i>";
+                                    echo "</a>";
+                                    echo "</td>";
                                     echo "</tr>";
                                 }
                             } else {
                                 echo "<tr><td colspan='3'>No data found</td></tr>";
                             }
                             ?>
+
                         </tbody>
                     </table>
                 </div>
@@ -147,8 +158,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
-include 'includes/fotter.php';
-
 // Close the database connection after HTML content
 $conn->close();
 ?>
