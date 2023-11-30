@@ -83,39 +83,35 @@
                 </div>
 
                 <div class="modal-body">
-                    <!-- Add your form fields for adding a new supplier here -->
-                    <form>
+    <!-- Add your form fields for adding a new customer here -->
+    <form action="" method="post" autocomplete="off">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+        </div>
 
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
-                        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+        </div>
 
-                        <div class="form-group">
-                            <label for="name">Company Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="Address">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactNumber">Contact Number</label>
-                            <input type="text" class="form-control" id="contactNumber" placeholder="Contact Number">
-                        </div>
-                        <div class="form-group">
-                            <label for="note">Note</label>
-                            <textarea class="form-control" id="note" rows="1"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                     <button type="button" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-close"></i>  Close</button>
-                  
-                </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" class="form-control" id="contactNumber" name="contact" placeholder="Contact Number">
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-close"></i> Close</button>
+                 </div>
             </div>
         </div>
+</from>
     </div>
 
     <!-- Edit Supplier Modal -->
