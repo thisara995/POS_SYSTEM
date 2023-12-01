@@ -139,7 +139,7 @@ if
             </div>
 
 
-    <!-- Modal -->
+    <!--Delete Customer Modal -->
 <div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="deletemodalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -177,10 +177,7 @@ if
                 <div class="modal-body">
              
                 <form action="customer_process.php" method="POST" autocomplete="off">
-                <div class="form-group">
-                        <label for="name">Full Name</label>
-                    </div>
-                   
+              
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Name">

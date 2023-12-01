@@ -37,14 +37,12 @@
     <table id="datatablesSimple" class="table">
                         <thead>
                             <tr>
-                                <th>Product Code</th>
-                                <th>Product Name</th>
+                                <th>SKU</th>
                                 <th>Category</th>
-                                <th>Description</th>
+                                <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Supplier</th>
-                                <!-- <th>Barcode</th> -->
                                 <th>Supplied Date</th>
                                 <th>Action</th>
                             </tr>
@@ -58,8 +56,6 @@
                                 <td>123 Main St</td>
                                 <td>555-1234</td>
                                 <td>Notes</td>
-                                <td>1</td>
-                                <!-- <td>Supplier 1</td> -->
                                 <td>ABC</td>
                                 <td>
                                 <a href="view-page.html">
@@ -99,37 +95,50 @@
                 </div>
 
                 <div class="modal-body">
-             <form>
+             <form action="" method="POST" autocomplete="off">
 
         <div class="form-group">
-            <label for="itemCode">Product Code</label>
-            <input type="text" class="form-control" id="itemCode" placeholder="Item Code">
+            <label for="itemCode">SKU</label>
+            <input type="text" class="form-control" id="SKU" placeholder="SKU">
         </div>
+
+        <div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" id="category" name="category">
+    <option value="">-------- Select Category ----------</option>
+    <?php 
+    // Fetch categories from the database
+    $categoriesQuery = $conn->query("SELECT * FROM categories ORDER BY category_name ASC");
+
+    // Check if categories are fetched successfully
+    if ($categoriesQuery && $categoriesQuery->num_rows > 0) {
+        // Loop through fetched categories and create options
+        while ($row = $categoriesQuery->fetch_assoc()) {
+            $categoryId = $row['CategoryID'];
+            $categoryName = $row['category_name'];
+            // Output option with category ID as value and category name as display text
+            echo "<option value='$categoryId'>$categoryName</option>";
+        }
+    } else {
+        echo "<option value=''>No categories found</option>";
+    }
+    ?>
+</select>
+
+</div>
+
+
 
         <div class="form-group">
             <label for="itemName">Product Name</label>
-            <input type="text" class="form-control" id="itemName" placeholder="Item Name">
+            <input type="text" class="form-control" id="product" name= "product" placeholder="Product Name">
         </div>
 
-        <div class="form-group">
-            <label for="category">Category</label>
-            <select class="form-control" id="category">
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
-                <!-- Add more categories as needed -->
-            </select>
-        </div>
-
-
-        <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" cols="30" rows="2"></textarea>
-        </div>
-
+    
 
         <div class="form-group">
             <label for="sellingPrice">Price</label>
-            <input type="text" class="form-control" id="sellingPrice" placeholder="Selling Price">
+            <input type="text" class="form-control" id="price" placeholder="Selling Price">
         </div>
 
         <div class="form-group">
@@ -147,18 +156,17 @@
             <input type="date" class="form-control" id="supplier" placeholder="Supplier">
         </div>
 
-        
-
     </form>
-</div>
+
 
         <div class="modal-footer">
         <button type="button" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-close"></i>  Close</button>
             
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
     <!-- Edit Supplier Modal -->
